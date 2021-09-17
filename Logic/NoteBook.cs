@@ -6,7 +6,28 @@ using System.Threading.Tasks;
 
 namespace Logic
 {
-    class NoteBook
+    /// <summary>
+    /// Is a facade of the logic layer
+    /// </summary>
+    public class NoteBook
     {
+        /// <summary>
+        /// store all the units
+        /// </summary>
+        private List<Unit> units;
+
+        /// <summary>
+        /// Contains all the exams
+        /// </summary>
+        private List<Exam> exams;
+
+        /// <summary>
+        /// Initialize all lists
+        /// </summary>
+        public NoteBook()
+        {
+            this.units = new List<Unit>();
+            this.exams = new List<Exam>();
+        }
     }
 }

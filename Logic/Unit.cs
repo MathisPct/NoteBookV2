@@ -6,7 +6,19 @@ using System.Threading.Tasks;
 
 namespace Logic
 {
-    class Unit
+    public class Unit : PedagocicalElement
     {
+        /// <summary>
+        /// List of mudules that unit contains
+        /// </summary>
+        private List<Module> modules; 
+
+        /// <summary>
+        /// Initialize list
+        /// </summary>
+        public Unit()
+        {
+            this.modules = new List<Module>();
+        }
     }
 }

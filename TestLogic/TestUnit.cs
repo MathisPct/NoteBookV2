@@ -1,14 +1,15 @@
 using System;
 using Xunit;
+using Logic;
 
 namespace TestLogic
 {
-    public class UnitTest1
+    public class TestUnit
     {
         [Fact]
-        public void Test1()
+        public void TestConstructor()
         {
-
+            Unit u1 = new Unit();
         }
     }
 }

@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace Logic
 {
-    class Module
+    /// <summary>
+    /// A module is a root pedagogical element
+    /// </summary>
+    public class Module : PedagocicalElement
     {
+     
     }
 }
