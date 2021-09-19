@@ -17,7 +17,7 @@ namespace Logic
             get => name;
             set
             {
-                if (value == "" || value == null) throw new Exception("The name must be not empty");
+                if (value == null || value.Equals("")) throw new Exception("The name must be not empty");
                 this.name = value;
             }
         }

@@ -26,7 +26,7 @@ namespace TestLogic
         {
             PedagocicalElement pE = new PedagocicalElement();
             /// Cas où le nom est vide
-            Assert.Throws<Exception>(() => { pE.Name.Equals(""); });
+            Assert.Throws<Exception>(() => { pE.Name = ""; });
 
             /// Cas où le nom est null 
             Assert.Throws<Exception>(() => { pE.Name = null; });
