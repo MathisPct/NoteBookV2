@@ -14,3 +14,4 @@ C:\Users\math7\OneDrive\Documents\2emeA DUT INFO\S3\M3105 - Conception et progra
 C:\Users\math7\OneDrive\Documents\2emeA DUT INFO\S3\M3105 - Conception et programmation objet avancées\Projet TP\NoteBook\Logic\obj\Debug\Logic.csproj.CoreCompileInputs.cache
 C:\Users\math7\OneDrive\Documents\2emeA DUT INFO\S3\M3105 - Conception et programmation objet avancées\Projet TP\NoteBook\Logic\obj\Debug\Logic.dll
 C:\Users\math7\OneDrive\Documents\2emeA DUT INFO\S3\M3105 - Conception et programmation objet avancées\Projet TP\NoteBook\Logic\obj\Debug\Logic.pdb
+C:\Users\math7\OneDrive\Documents\2emeA DUT INFO\S3\M3105 - Conception et programmation objet avancées\Projet TP\NoteBook\Logic\obj\Debug\Logic.csproj.AssemblyReference.cache

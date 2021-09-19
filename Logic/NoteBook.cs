@@ -29,5 +29,14 @@ namespace Logic
             this.units = new List<Unit>();
             this.exams = new List<Exam>();
         }
+
+        /// <summary>
+        /// Get list of units
+        /// </summary>
+        /// <returns>array of units which NoteBook contains</returns>
+        public Unit[] ListUnits()
+        {
+            return this.units.ToArray();
+        }
     }
 }
