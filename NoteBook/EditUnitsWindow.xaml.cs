@@ -10,22 +10,23 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Logic;
 
 namespace NoteBook
 {
     /// <summary>
-    /// Logique d'interaction pour MainWindow.xaml
+    /// Logique d'interaction pour EditUnitsWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class EditUnitsWindow : Window
     {
         private Logic.NoteBook notebook;
 
-        public MainWindow()
+        public EditUnitsWindow(Logic.NoteBook nb)
         {
-            this.notebook = new Logic.NoteBook();
+            this.notebook = nb;
             InitializeComponent();
+            DrawUnits();
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -34,14 +35,14 @@ namespace NoteBook
         }
 
         /// <summary>
-        /// Open second window to see different units
+        /// Initialize listItems
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void GoEditUnits(object sender, RoutedEventArgs e)
+        private void DrawUnits()
         {
-            EditUnitsWindow second = new EditUnitsWindow(notebook);
-            second.Show();
+            var list = notebook.ListUnits();
+            listUnits.Items.Clear();
+            foreach (var item in list)
+                listUnits.Items.Add(item);
         }
     }
 }
