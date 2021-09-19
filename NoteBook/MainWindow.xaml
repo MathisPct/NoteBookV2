@@ -1,9 +1,9 @@
-﻿<Window x:Class="NotaBook.MainWindow"
+﻿<Window x:Class="NoteBook.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:NotaBook"
+        xmlns:local="clr-namespace:NoteBook"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
@@ -12,6 +12,5 @@
         <Button Content="Afficher les moyennes" HorizontalAlignment="Left" Margin="315,241,0,0" VerticalAlignment="Top" Width="169" Height="57" FontSize="16"/>
         <Label Content="Carnet de note" HorizontalAlignment="Center" Margin="272,0,264,0" VerticalAlignment="Top" Width="256" FontSize="36"/>
         <Image HorizontalAlignment="Left" Height="100" Margin="350,116,0,0" VerticalAlignment="Top" Width="100" Source="book.png"/>
-
     </Grid>
 </Window>

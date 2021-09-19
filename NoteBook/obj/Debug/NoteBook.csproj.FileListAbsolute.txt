@@ -52,3 +52,21 @@ C:\Users\mp671721\Desktop\Projet\NoteBook\NoteBook\obj\Debug\NoteBook.csproj.Cor
 C:\Users\mp671721\Desktop\Projet\NoteBook\NoteBook\obj\Debug\NoteBook.csproj.CopyComplete
 C:\Users\mp671721\Desktop\Projet\NoteBook\NoteBook\obj\Debug\NoteBook.exe
 C:\Users\mp671721\Desktop\Projet\NoteBook\NoteBook\obj\Debug\NoteBook.pdb
+C:\Users\math7\OneDrive\Documents\2emeA DUT INFO\S3\M3105 - Conception et programmation objet avancées\Projet TP\NoteBook\NoteBook\bin\Debug\NoteBook.exe.config
+C:\Users\math7\OneDrive\Documents\2emeA DUT INFO\S3\M3105 - Conception et programmation objet avancées\Projet TP\NoteBook\NoteBook\bin\Debug\NoteBook.exe
+C:\Users\math7\OneDrive\Documents\2emeA DUT INFO\S3\M3105 - Conception et programmation objet avancées\Projet TP\NoteBook\NoteBook\bin\Debug\NoteBook.pdb
+C:\Users\math7\OneDrive\Documents\2emeA DUT INFO\S3\M3105 - Conception et programmation objet avancées\Projet TP\NoteBook\NoteBook\bin\Debug\Logic.dll
+C:\Users\math7\OneDrive\Documents\2emeA DUT INFO\S3\M3105 - Conception et programmation objet avancées\Projet TP\NoteBook\NoteBook\bin\Debug\Logic.pdb
+C:\Users\math7\OneDrive\Documents\2emeA DUT INFO\S3\M3105 - Conception et programmation objet avancées\Projet TP\NoteBook\NoteBook\obj\Debug\NoteBook.csproj.AssemblyReference.cache
+C:\Users\math7\OneDrive\Documents\2emeA DUT INFO\S3\M3105 - Conception et programmation objet avancées\Projet TP\NoteBook\NoteBook\obj\Debug\MainWindow.g.cs
+C:\Users\math7\OneDrive\Documents\2emeA DUT INFO\S3\M3105 - Conception et programmation objet avancées\Projet TP\NoteBook\NoteBook\obj\Debug\App.g.cs
+C:\Users\math7\OneDrive\Documents\2emeA DUT INFO\S3\M3105 - Conception et programmation objet avancées\Projet TP\NoteBook\NoteBook\obj\Debug\NoteBook_MarkupCompile.cache
+C:\Users\math7\OneDrive\Documents\2emeA DUT INFO\S3\M3105 - Conception et programmation objet avancées\Projet TP\NoteBook\NoteBook\obj\Debug\NoteBook_MarkupCompile.lref
+C:\Users\math7\OneDrive\Documents\2emeA DUT INFO\S3\M3105 - Conception et programmation objet avancées\Projet TP\NoteBook\NoteBook\obj\Debug\MainWindow.baml
+C:\Users\math7\OneDrive\Documents\2emeA DUT INFO\S3\M3105 - Conception et programmation objet avancées\Projet TP\NoteBook\NoteBook\obj\Debug\NoteBook.g.resources
+C:\Users\math7\OneDrive\Documents\2emeA DUT INFO\S3\M3105 - Conception et programmation objet avancées\Projet TP\NoteBook\NoteBook\obj\Debug\NoteBook.Properties.Resources.resources
+C:\Users\math7\OneDrive\Documents\2emeA DUT INFO\S3\M3105 - Conception et programmation objet avancées\Projet TP\NoteBook\NoteBook\obj\Debug\NoteBook.csproj.GenerateResource.cache
+C:\Users\math7\OneDrive\Documents\2emeA DUT INFO\S3\M3105 - Conception et programmation objet avancées\Projet TP\NoteBook\NoteBook\obj\Debug\NoteBook.csproj.CoreCompileInputs.cache
+C:\Users\math7\OneDrive\Documents\2emeA DUT INFO\S3\M3105 - Conception et programmation objet avancées\Projet TP\NoteBook\NoteBook\obj\Debug\NoteBook.csproj.CopyComplete
+C:\Users\math7\OneDrive\Documents\2emeA DUT INFO\S3\M3105 - Conception et programmation objet avancées\Projet TP\NoteBook\NoteBook\obj\Debug\NoteBook.exe
+C:\Users\math7\OneDrive\Documents\2emeA DUT INFO\S3\M3105 - Conception et programmation objet avancées\Projet TP\NoteBook\NoteBook\obj\Debug\NoteBook.pdb
