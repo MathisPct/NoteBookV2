@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="EditUnitsWindow" Height="450" Width="800">
     <Grid>
-        <ListBox x:Name="listUnits" HorizontalAlignment="Left" Height="349" Margin="163,10,0,0" VerticalAlignment="Top" Width="485"/>
+        <ListBox x:Name="listUnits" HorizontalAlignment="Left" Height="349" Margin="163,10,0,0" VerticalAlignment="Top" Width="485" MouseDoubleClick="EditUnit"/>
         <Button x:Name="add" Content="Add" HorizontalAlignment="Left" Margin="163,374,0,0" VerticalAlignment="Top" Width="109" Height="36" Click="Button_Click"/>
         <Button x:Name="remove" Content="Remove" HorizontalAlignment="Left" Margin="539,374,0,0" VerticalAlignment="Top" Width="109" Height="36"/>
 

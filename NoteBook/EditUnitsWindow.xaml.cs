@@ -44,5 +44,24 @@ namespace NoteBook
             foreach (var item in list)
                 listUnits.Items.Add(item);
         }
+
+        /// <summary>
+        /// Allow to modify list element. When the modif is finish, list of units
+        /// is refreshed
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void EditUnit(object sender, MouseButtonEventArgs e)
+        {
+            if(listUnits.SelectedItem is Unit u)
+            {
+                EditElementWindow third = new EditElementWindow(u);
+                if(third.ShowDialog() == true)
+                {
+                    //refresh of list
+                    DrawUnits();
+                }
+            }
+        }
     }
 }

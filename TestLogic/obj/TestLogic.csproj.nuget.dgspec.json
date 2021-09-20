@@ -1,35 +1,37 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\math7\\OneDrive\\Documents\\2emeA DUT INFO\\S3\\M3105 - Conception et programmation objet avancées\\Projet TP\\NoteBook\\TestLogic\\TestLogic.csproj": {}
+    "C:\\Users\\mp671721\\Desktop\\Projet COPOO\\NoteBook\\TestLogic\\TestLogic.csproj": {}
   },
   "projects": {
-    "C:\\Users\\math7\\OneDrive\\Documents\\2emeA DUT INFO\\S3\\M3105 - Conception et programmation objet avancées\\Projet TP\\NoteBook\\Logic\\Logic.csproj": {
+    "C:\\Users\\mp671721\\Desktop\\Projet COPOO\\NoteBook\\Logic\\Logic.csproj": {
       "restore": {
-        "projectUniqueName": "C:\\Users\\math7\\OneDrive\\Documents\\2emeA DUT INFO\\S3\\M3105 - Conception et programmation objet avancées\\Projet TP\\NoteBook\\Logic\\Logic.csproj",
+        "projectUniqueName": "C:\\Users\\mp671721\\Desktop\\Projet COPOO\\NoteBook\\Logic\\Logic.csproj",
         "projectName": "Logic",
-        "projectPath": "C:\\Users\\math7\\OneDrive\\Documents\\2emeA DUT INFO\\S3\\M3105 - Conception et programmation objet avancées\\Projet TP\\NoteBook\\Logic\\Logic.csproj"
+        "projectPath": "C:\\Users\\mp671721\\Desktop\\Projet COPOO\\NoteBook\\Logic\\Logic.csproj"
       },
       "frameworks": {
         "net472": {}
       }
     },
-    "C:\\Users\\math7\\OneDrive\\Documents\\2emeA DUT INFO\\S3\\M3105 - Conception et programmation objet avancées\\Projet TP\\NoteBook\\TestLogic\\TestLogic.csproj": {
+    "C:\\Users\\mp671721\\Desktop\\Projet COPOO\\NoteBook\\TestLogic\\TestLogic.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\math7\\OneDrive\\Documents\\2emeA DUT INFO\\S3\\M3105 - Conception et programmation objet avancées\\Projet TP\\NoteBook\\TestLogic\\TestLogic.csproj",
+        "projectUniqueName": "C:\\Users\\mp671721\\Desktop\\Projet COPOO\\NoteBook\\TestLogic\\TestLogic.csproj",
         "projectName": "TestLogic",
-        "projectPath": "C:\\Users\\math7\\OneDrive\\Documents\\2emeA DUT INFO\\S3\\M3105 - Conception et programmation objet avancées\\Projet TP\\NoteBook\\TestLogic\\TestLogic.csproj",
-        "packagesPath": "C:\\Users\\math7\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\math7\\OneDrive\\Documents\\2emeA DUT INFO\\S3\\M3105 - Conception et programmation objet avancées\\Projet TP\\NoteBook\\TestLogic\\obj\\",
+        "projectPath": "C:\\Users\\mp671721\\Desktop\\Projet COPOO\\NoteBook\\TestLogic\\TestLogic.csproj",
+        "packagesPath": "C:\\Users\\mp671721\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\mp671721\\Desktop\\Projet COPOO\\NoteBook\\TestLogic\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
         ],
         "configFilePaths": [
-          "C:\\Users\\math7\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\mp671721\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
@@ -42,8 +44,8 @@
           "netcoreapp3.1": {
             "targetAlias": "netcoreapp3.1",
             "projectReferences": {
-              "C:\\Users\\math7\\OneDrive\\Documents\\2emeA DUT INFO\\S3\\M3105 - Conception et programmation objet avancées\\Projet TP\\NoteBook\\Logic\\Logic.csproj": {
-                "projectPath": "C:\\Users\\math7\\OneDrive\\Documents\\2emeA DUT INFO\\S3\\M3105 - Conception et programmation objet avancées\\Projet TP\\NoteBook\\Logic\\Logic.csproj"
+              "C:\\Users\\mp671721\\Desktop\\Projet COPOO\\NoteBook\\Logic\\Logic.csproj": {
+                "projectPath": "C:\\Users\\mp671721\\Desktop\\Projet COPOO\\NoteBook\\Logic\\Logic.csproj"
               }
             }
           }
@@ -94,7 +96,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.400\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.301\\RuntimeIdentifierGraph.json"
         }
       }
     }

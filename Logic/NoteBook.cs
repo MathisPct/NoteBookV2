@@ -38,5 +38,14 @@ namespace Logic
         {
             return this.units.ToArray();
         }
+
+        /// <summary>
+        /// Add unit to list of units 
+        /// </summary>
+        /// <param name="unit">Unit which is added in list of units</param>
+        public void AddUnit(Unit unit)
+        {
+            this.units.Add(unit);
+        }
     }
 }

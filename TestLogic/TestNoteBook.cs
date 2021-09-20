@@ -13,7 +13,7 @@ namespace TestLogic
             NoteBook nB = new NoteBook();
 
             Assert.NotNull(nB.ListUnits());
-            Assert.True(nB.ListUnits().Length == 0);
+            Assert.Empty(nB.ListUnits());
         }
     }
 }
