@@ -86,5 +86,26 @@ namespace NoteBook
                 MessageBox.Show(x.Message);
             }
         }
+            
+        /// <summary>
+        /// Remove element which is selected in list units container
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void RemoveUnit(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                if(listUnits.SelectedItem is Unit unit)
+                {
+                    this.notebook.RemoveUnit(unit);
+                    DrawUnits();
+                }
+            }
+            catch(Exception x)
+            {
+                MessageBox.Show(x.Message);
+            }
+        }
     }
 }
