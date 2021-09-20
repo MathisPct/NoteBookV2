@@ -63,5 +63,28 @@ namespace NoteBook
                 }
             }
         }
+
+        /// <summary>
+        /// Open a modal window to add unit in list container
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void AddUnit(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                Unit newUnit = new Unit();
+                EditElementWindow third = new EditElementWindow(newUnit);
+                //if window is closed
+                if(third.ShowDialog() == true)
+                {
+                    notebook.AddUnit(newUnit);
+                    DrawUnits();
+                }
+            }catch(Exception x)
+            {
+                MessageBox.Show(x.Message);
+            }
+        }
     }
 }

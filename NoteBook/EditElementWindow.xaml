@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:NoteBook"
         mc:Ignorable="d"
-        Title="EditUnits" Height="424.18" Width="436.066">
+        Title="EditElement" Height="424.18" Width="436.066">
     <Grid>
         <TextBox x:Name="name" HorizontalAlignment="Left" Height="23" Margin="209,0,0,251" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Bottom" Width="121" FontSize="16" RenderTransformOrigin="0.762,-0.22"/>
         <Label Content="Name: " HorizontalAlignment="Left" Margin="105,0,0,251" VerticalAlignment="Bottom" FontSize="16"/>

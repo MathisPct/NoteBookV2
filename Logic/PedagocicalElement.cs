@@ -35,5 +35,10 @@ namespace Logic
                 coef = value;
             }
         }
+
+        public override string ToString()
+        {
+            return "Name" + ": " + this.name + "\nCoef: " + this.coef;
+        }
     }
 }
