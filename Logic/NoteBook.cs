@@ -51,5 +51,14 @@ namespace Logic
             }
             this.units.Add(unit);
         }
+
+        /// <summary>
+        /// Remove unit in list which is passed in parameter
+        /// </summary>
+        /// <param name="u">unit which must be removed in list</param>
+        public void RemoveUnit(Unit u)
+        {
+            this.units.Remove(u);
+        }
     }
 }

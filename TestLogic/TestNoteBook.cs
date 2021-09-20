@@ -38,5 +38,15 @@ namespace TestLogic
             nb.AddUnit(u2);
             Assert.Throws<Exception>(() => { nb.AddUnit(u3); });
         }
+
+        [Fact]
+        public void RemoveUnit()
+        {
+            NoteBook nb = new NoteBook();
+            Unit u = new Unit();
+            nb.AddUnit(u);
+            nb.RemoveUnit(u);
+            Assert.Empty(nb.ListUnits());
+        }
     }
 }
