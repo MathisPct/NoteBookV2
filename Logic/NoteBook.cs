@@ -45,6 +45,10 @@ namespace Logic
         /// <param name="unit">Unit which is added in list of units</param>
         public void AddUnit(Unit unit)
         {
+            foreach(var item in this.units)
+            {
+                if (unit.Name == item.Name) throw new Exception("Unit name is already exist");
+            }
             this.units.Add(unit);
         }
     }
