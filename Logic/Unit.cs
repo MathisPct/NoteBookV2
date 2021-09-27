@@ -20,5 +20,10 @@ namespace Logic
         {
             this.modules = new List<Module>();
         }
+
+        public Module[] ListModules()
+        {
+            return modules.ToArray();
+        }
     }
 }
