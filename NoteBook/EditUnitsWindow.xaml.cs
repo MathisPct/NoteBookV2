@@ -107,5 +107,35 @@ namespace NoteBook
                 MessageBox.Show(x.Message);
             }
         }
+
+        /// <summary>
+        /// Allow to add module in Notebook
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void AddModule(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        /// <summary>
+        /// Modify list element
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void EditModule(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        /// <summary>
+        /// Allow to remove module from list
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void RemoveModule(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

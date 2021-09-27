@@ -7,9 +7,26 @@
         mc:Ignorable="d"
         Title="EditUnitsWindow" Height="450" Width="800">
     <Grid>
-        <ListBox x:Name="listUnits" HorizontalAlignment="Left" Height="349" Margin="163,10,0,0" VerticalAlignment="Top" Width="485" MouseDoubleClick="EditUnit"/>
-        <Button x:Name="add" Content="Add" HorizontalAlignment="Left" Margin="163,374,0,0" VerticalAlignment="Top" Width="109" Height="36" Click="AddUnit"/>
-        <Button x:Name="remove" Content="Remove" HorizontalAlignment="Left" Margin="539,374,0,0" VerticalAlignment="Top" Width="109" Height="36" Click="RemoveUnit"/>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="4*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Label Content="Courses Units" />
+        <ListBox x:Name="listUnits" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="2" Margin="20" MouseDoubleClick="EditUnit"/>
+        <Button x:Name="add" Content="Add" Grid.Column="0" Grid.Row="1" Margin="20" Click="AddUnit"/>
+        <Button x:Name="remove" Content="Remove" Grid.Column="1" Grid.Row="1" Margin="20" Click="RemoveUnit"/>
+
+        <Label Content="Modules" Grid.Column="2"/>
+        <ListBox x:Name="listModules" Grid.Row="0" Grid.Column="2" Grid.ColumnSpan="2" Margin="20" MouseDoubleClick="EditModule" />
+        <Button x:Name="addModule" Content="Add" Grid.Row="1" Grid.Column="2" Margin="20" Click="AddModule"/>
+        <Button x:Name="removeModule" Content="Button" Grid.Column="3" Grid.Row="1" Margin="20" Click="RemoveModule"/>
 
     </Grid>
 </Window>
