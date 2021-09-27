@@ -19,7 +19,7 @@
         </Grid.RowDefinitions>
 
         <Label Content="Courses Units" />
-        <ListBox x:Name="listUnits" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="2" Margin="20" MouseDoubleClick="EditUnit"/>
+        <ListBox x:Name="listUnits" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="2" Margin="20" MouseDoubleClick="EditUnit" SelectionChanged="SelectUnit"/>
         <Button x:Name="add" Content="Add" Grid.Column="0" Grid.Row="1" Margin="20" Click="AddUnit"/>
         <Button x:Name="remove" Content="Remove" Grid.Column="1" Grid.Row="1" Margin="20" Click="RemoveUnit"/>
 

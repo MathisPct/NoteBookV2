@@ -35,7 +35,7 @@ namespace NoteBook
         }
 
         /// <summary>
-        /// Initialize listItems
+        /// Initialize listUnits
         /// </summary>
         private void DrawUnits()
         {
@@ -43,6 +43,20 @@ namespace NoteBook
             listUnits.Items.Clear();
             foreach (var item in list)
                 listUnits.Items.Add(item);
+        }
+
+        /// <summary>
+        /// Initialize listModule according to unit which is selected
+        /// </summary>
+        private void DrawModules()
+        {
+            if (listUnits.SelectedItem is Unit unit)
+            {
+                var list = unit.ListModules();
+                listModules.Items.Clear();
+                foreach (Module m in list)
+                    listModules.Items.Add(m);
+            }
         }
 
         /// <summary>
@@ -137,5 +151,16 @@ namespace NoteBook
         {
 
         }
+
+        private void S(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
+
+        private void SelectUnit(object sender, SelectionChangedEventArgs e)
+        {
+            DrawModules();
+        }
+
     }
 }
