@@ -19,10 +19,6 @@ namespace Logic
         public Unit()
         {
             this.modules = new List<Module>();
-            Module test = new Module();
-            test.Name = "test";
-            test.Coef = 1;
-            modules.Add(test);
         }
 
         public Module[] ListModules()

@@ -133,13 +133,22 @@ namespace NoteBook
         }
 
         /// <summary>
-        /// Modify list element
+        /// Modify list element. Open Edit window of the element which is 
+        /// selected on list of module
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void EditModule(object sender, RoutedEventArgs e)
         {
-
+            if(listModules.SelectedItem is Module m)
+            {
+                EditElementWindow third = new EditElementWindow(m);
+                if(third.ShowDialog() == true)
+                {
+                    //refresh of list
+                    DrawModules();
+                }
+            }
         }
 
         /// <summary>
