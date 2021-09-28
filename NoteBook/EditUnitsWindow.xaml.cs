@@ -142,13 +142,24 @@ namespace NoteBook
         }
 
         /// <summary>
-        /// Allow to remove module from list
+        /// Remove module which is selected in list of modules
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void RemoveModule(object sender, RoutedEventArgs e)
         {
-
+            try
+            {
+                if (listModules.SelectedItem is Module m)
+                {
+                    Unit u = (Unit)(this.listUnits.SelectedItem);
+                    u.Remove(m);
+                    DrawModules();
+                }
+            }catch(Exception x)
+            {
+                MessageBox.Show(x.Message);
+            }
         }
 
         private void SelectUnit(object sender, SelectionChangedEventArgs e)
