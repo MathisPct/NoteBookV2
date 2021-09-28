@@ -25,8 +25,8 @@
 
         <Label Content="Modules" Grid.Column="2"/>
         <ListBox x:Name="listModules" Grid.Row="0" Grid.Column="2" Grid.ColumnSpan="2" Margin="20" MouseDoubleClick="EditModule" />
-        <Button x:Name="addModule" Content="Add" Grid.Row="1" Grid.Column="2" Margin="20" Click="AddModule"/>
-        <Button x:Name="removeModule" Content="Button" Grid.Column="3" Grid.Row="1" Margin="20" Click="RemoveModule"/>
+        <Button x:Name="addModule" Content="Add" Grid.Row="1" Grid.Column="2" Margin="20" Click="CreateModule"/>
+        <Button x:Name="removeModule" Content="Remove" Grid.Column="3" Grid.Row="1" Margin="20" Click="RemoveModule"/>
 
     </Grid>
 </Window>

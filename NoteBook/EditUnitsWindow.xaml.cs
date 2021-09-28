@@ -123,16 +123,6 @@ namespace NoteBook
         }
 
         /// <summary>
-        /// Allow to add module in Notebook
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void AddModule(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        /// <summary>
         /// Modify list element. Open Edit window of the element which is 
         /// selected on list of module
         /// </summary>
@@ -161,15 +151,40 @@ namespace NoteBook
 
         }
 
-        private void S(object sender, SelectionChangedEventArgs e)
-        {
-
-        }
-
         private void SelectUnit(object sender, SelectionChangedEventArgs e)
         {
             DrawModules();
         }
 
+        /// <summary>
+        /// Allow to add module in Unit
+        /// Throw exception if unit is not selected
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void CreateModule(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                if (listUnits.SelectedItem is Unit unit)
+                {
+                    Module newModule = new Module();
+                    EditElementWindow third = new EditElementWindow(newModule);
+                    //if window is closed
+                    if (third.ShowDialog() == true)
+                    {
+                        unit.Add(newModule);
+                        DrawModules();
+                    }
+                }
+                else
+                {
+                    throw new Exception("Please select Unit to add Module");
+                }
+            }catch(Exception x)
+            {
+                MessageBox.Show(x.Message);
+            }
+        }
     }
 }
