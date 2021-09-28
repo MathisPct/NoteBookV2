@@ -34,5 +34,14 @@ namespace Logic
         {
             this.modules.Add(m);
         }
+
+        /// <summary>
+        /// Remove module in list of module
+        /// </summary>
+        /// <param name="m">Module to delete</param>
+        public void Remove(Module m)
+        {
+            this.modules.Remove(m);
+        }
     }
 }

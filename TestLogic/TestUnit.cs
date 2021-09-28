@@ -32,5 +32,18 @@ namespace TestLogic
             Assert.Equal(2 ,u1.ListModules().Length);
             Assert.Same(u1.ListModules()[0], m1);
         }
+
+        [Fact]
+        public void TestRemoveModule()
+        {
+            Unit u = new Unit();
+            Module m1 = new Module();
+            u.Add(m1);
+            //list must be not empty
+            Assert.NotEmpty(u.ListModules());
+            u.Remove(m1);
+            //list must be empty after removing
+            Assert.Empty(u.ListModules());
+        }
     }
 }
