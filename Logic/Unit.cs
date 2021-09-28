@@ -25,5 +25,14 @@ namespace Logic
         {
             return modules.ToArray();
         }
+
+        /// <summary>
+        /// Ajoute un module à la liste des modules courante contenue dans une unité
+        /// </summary>
+        /// <param name="m">Module à ajouter</param>
+        public void Add(Module m)
+        {
+            this.modules.Add(m);
+        }
     }
 }

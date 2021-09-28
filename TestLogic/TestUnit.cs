@@ -17,7 +17,20 @@ namespace TestLogic
         {
             Unit u1 = new Unit();
             //Liste des modules pas nulle
-            Assert.NotEmpty(u1.ListModules());
+            Assert.NotNull(u1.ListModules());
+            Assert.Empty(u1.ListModules());
+        }
+
+        [Fact]
+        public void TestAddModules()
+        {
+            Unit u1 = new Unit();
+            Module m1 = new Module();
+            Module m2 = new Module();
+            u1.Add(m1);
+            u1.Add(m2);
+            Assert.Equal(2 ,u1.ListModules().Length);
+            Assert.Same(u1.ListModules()[0], m1);
         }
     }
 }

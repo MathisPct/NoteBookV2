@@ -6,10 +6,5 @@ namespace TestLogic
 {
     public class TestModule
     {
-        [Fact]
-        public void Test1()
-        {
-
-        }
     }
 }
