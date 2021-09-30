@@ -45,10 +45,17 @@ namespace Logic
         /// <param name="unit">Unit which is added in list of units</param>
         public void AddUnit(Unit unit)
         {
-            foreach(var item in this.units)
+            bool findSame = false;
+            int index = 0;
+            while((index < ListUnits().Length) && (!findSame))
             {
-                if (unit.Name == item.Name) throw new Exception("Unit name is already exist");
+                if (ListUnits()[index].Equals(unit))
+                {
+                    findSame = true;
+                }
+                index++;
             }
+            if (findSame) throw new Exception("Unit name is already exist");
             this.units.Add(unit);
         }
 
@@ -59,6 +66,26 @@ namespace Logic
         public void RemoveUnit(Unit u)
         {
             this.units.Remove(u);
+        }
+
+        /// <summary>
+        /// Return array of modules get thanks to list of units. Each of unit contains list
+        /// of modules
+        /// </summary>
+        /// <returns>Array of modules</returns>
+        public Module[] ListModules()
+        {
+            List<Module> modules = new List<Module>();
+            if(ListUnits().Length == 0)
+            {
+                throw new Exception("Notebook contains no units");
+            }
+            // iterate list of unit to get all modules of this unit
+            foreach(var unit in ListUnits())
+            {
+                modules.AddRange(unit.ListModules());
+            }
+            return modules.ToArray();
         }
     }
 }

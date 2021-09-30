@@ -43,5 +43,11 @@ namespace Logic
         {
             this.modules.Remove(m);
         }
+
+        public override bool Equals(object obj)
+        {
+            return obj is Unit unit &&
+                   Name == unit.Name;
+        }
     }
 }
