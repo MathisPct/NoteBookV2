@@ -87,5 +87,27 @@ namespace Logic
             }
             return modules.ToArray();
         }
+
+        /// <summary>
+        /// Add exam in current list of exam 
+        /// </summary>
+        /// <param name="exam"></param>
+        public void AddExam(Exam exam)
+        {
+            if (exams.Exists(item => item.Equals(exam)))
+            {
+                throw new Exception("Exam is already exist");
+            }
+            exams.Add(exam);
+        }
+
+        /// <summary>
+        /// Get all of exams in array
+        /// </summary>
+        /// <returns>Array of exams</returns>
+        public Exam[] ListExams()
+        {
+            return exams.ToArray();
+        }
     }
 }
