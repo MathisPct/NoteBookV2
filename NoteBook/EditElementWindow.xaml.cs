@@ -29,16 +29,6 @@ namespace NoteBook
             coef.Text = element.Coef.ToString();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
-        }
-
         private void Validate(object sender, RoutedEventArgs e)
         {
             try
