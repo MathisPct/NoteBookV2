@@ -29,11 +29,6 @@ namespace NoteBook
             DrawUnits();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
         /// <summary>
         /// Initialize listUnits
         /// </summary>

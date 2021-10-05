@@ -43,5 +43,23 @@ namespace NoteBook
             EditUnitsWindow second = new EditUnitsWindow(notebook);
             second.Show();
         }
+
+        /// <summary>
+        /// Open new window of edit exam
+        /// Throw exception if no modules are exists in application
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void GoCreateExam(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                EditExamWindow second = new EditExamWindow(notebook);
+                second.Show();
+            }catch(Exception x)
+            {
+                MessageBox.Show(x.Message);
+            }
+        }
     }
 }

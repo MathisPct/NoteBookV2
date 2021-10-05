@@ -18,7 +18,7 @@
             <RowDefinition Height="2*"/>
         </Grid.RowDefinitions>
         <Button Content="Saisir les matières" Margin="40" Click="GoEditUnits" FontSize="16"/>
-        <Button Content="Rentrer un examen" Margin="40" Grid.Column="1" Grid.Row="2" FontSize="16"/>
+        <Button Content="Rentrer un examen" Margin="40" Grid.Column="1" Grid.Row="2" FontSize="16" Click="GoCreateExam"/>
         <Button Content="Afficher les moyennes" Margin="40" Grid.Column="2" Grid.Row="0" FontSize="16"/>
         <Label Content="Carnet de note" Grid.Column="1" Grid.Row="0" HorizontalAlignment="Center" FontSize="36"/>
         <Image Grid.Column="1" Grid.Row="1" Source="book.png"/>
