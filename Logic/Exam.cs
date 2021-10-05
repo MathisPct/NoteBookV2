@@ -61,7 +61,7 @@ namespace Logic
             get => module;
             set
             {
-                if (module == null) throw new Exception("Module must be not null");
+                if (value == null) throw new Exception("Module must be not null");
                 module = value;
             }
         }
