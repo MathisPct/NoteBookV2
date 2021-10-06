@@ -16,15 +16,17 @@ namespace TestLogic
             //cas où le coef < 0
             Assert.Throws<Exception>(() => { exam.Coef = -5f; });
 
-            //cas où le coef > 0
+            //cas où le coef change sans exception
             exam.Coef = 5f;
-            Assert.True(exam.Coef > 0);
+            Assert.Equal(5f, exam.Coef);
         }
 
         [Fact]
         public void TestScore()
         {
             Exam exam = new Exam();
+            //cas par défaut la note est à 0
+            Assert.Equal(0, exam.Score);
 
             //Cas où la note est < 0
             Assert.Throws<Exception>(() => { exam.Score = -5; });
@@ -32,9 +34,9 @@ namespace TestLogic
             //Cas où la note est > 20
             Assert.Throws<Exception>(() => { exam.Score = 21; });
 
-            //Cas où la note = 20, =0 0<=note<=20
-            exam.Coef = 5;
-            Assert.True(exam.Coef <= 20 && exam.Coef >= 0);
+            //Cas où la note change sans exception
+            exam.Score = 5;
+            Assert.Equal(5, exam.Score);
         }
 
         [Fact]
