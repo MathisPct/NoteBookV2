@@ -74,6 +74,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="EditExamWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="EditUnitsWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -88,6 +92,9 @@
     </Compile>
     <Compile Include="EditElementWindow.xaml.cs">
       <DependentUpon>EditElementWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="EditExamWindow.xaml.cs">
+      <DependentUpon>EditExamWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="EditUnitsWindow.xaml.cs">
       <DependentUpon>EditUnitsWindow.xaml</DependentUpon>
