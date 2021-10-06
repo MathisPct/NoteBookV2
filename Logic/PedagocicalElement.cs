@@ -11,7 +11,7 @@ namespace Logic
         /// <summary>
         /// Name of the element
         /// </summary>
-        private string name;
+        private string name = "";
         public string Name
         {
             get => name;
@@ -25,7 +25,7 @@ namespace Logic
         /// <summary>
         /// Coef of the element
         /// </summary>
-        private float coef;
+        private float coef = 0;
         public float Coef
         {
             get => coef;

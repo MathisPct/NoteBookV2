@@ -10,6 +10,9 @@ namespace TestLogic
         public void TestCoefSet()
         {
             PedagocicalElement pE = new PedagocicalElement();
+            /// cas par défaut coef = 0
+            Assert.Equal(0f, pE.Coef, 2);
+
             /// Cas où le coef = 0
             Assert.Throws<Exception>(() => { pE.Coef = 0.0f; });
 
@@ -18,18 +21,34 @@ namespace TestLogic
 
             ///cas où le coef > 0 
             pE.Coef = 5f;
-            Assert.True(pE.Coef > 0);
+            Assert.Equal(5f,pE.Coef,2);
         }
 
         [Fact]
         public void TestNameSet()
         {
             PedagocicalElement pE = new PedagocicalElement();
+            /// cas par défaut nom est vide
+            Assert.Empty(pE.Name);
+
             /// Cas où le nom est vide
             Assert.Throws<Exception>(() => { pE.Name = ""; });
 
             /// Cas où le nom est null 
             Assert.Throws<Exception>(() => { pE.Name = null; });
+
+            ///cas où le nom change
+            pE.Name = "test";
+            Assert.Equal("test", pE.Name);
+        }
+
+        [Fact]
+        public void TestToString()
+        {
+            PedagocicalElement e = new PedagocicalElement();
+            e.Name = "Math";
+            e.Coef = 5f;
+            Assert.Equal("Name: Math\nCoef: 5", e.ToString());
         }
     }
 }

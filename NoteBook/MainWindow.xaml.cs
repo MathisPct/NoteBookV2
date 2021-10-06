@@ -41,7 +41,7 @@ namespace NoteBook
         private void GoEditUnits(object sender, RoutedEventArgs e)
         {
             EditUnitsWindow second = new EditUnitsWindow(notebook);
-            second.Show();
+            second.ShowDialog();
         }
 
         /// <summary>
@@ -55,7 +55,7 @@ namespace NoteBook
             try
             {
                 EditExamWindow second = new EditExamWindow(notebook);
-                second.Show();
+                second.ShowDialog();
             }catch(Exception x)
             {
                 MessageBox.Show(x.Message);
