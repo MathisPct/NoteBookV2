@@ -17,10 +17,6 @@
                             <ColumnDefinition Width="*"/>
                             <ColumnDefinition Width="*"/>
                         </Grid.ColumnDefinitions>
-                        <Label Grid.Column="0" Content="Date exam"/>
-                        <Label Grid.Column="1" Content="Module"/>
-                        <Label Grid.Column="2" Content="Teacher"/>
-                        <Label Grid.Column="3" Content="Score"/>
                         <Label Grid.Column="0" Content="{Binding DateExam}" />
                         <Label Grid.Column="1" Content="{Binding Module.Name}" />
                         <Label Grid.Column="2" Content="{Binding Teacher}" />
