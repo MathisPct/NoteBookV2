@@ -80,11 +80,28 @@ namespace TestLogic
         {
             NoteBook nb = new NoteBook();
             Exam exam1 = new Exam();
+            Exam exam2 = new Exam();
             nb.AddExam(exam1);
+            Assert.Equal(1, nb.ListExams().Length);
+            Assert.Single(nb.ListExams());
             //test if exam has been added
             Assert.Same(nb.ListExams()[0], exam1);
+            //test if second exam has been added
+            nb.AddExam(exam2);
+            Assert.Equal(2, nb.ListExams().Length);
+            Assert.Same(nb.ListExams()[1], exam2);
             //test add same exams
             Assert.Throws<Exception>(() => { nb.AddExam(exam1); });
+        }
+
+        [Fact]
+        public void ListExam()
+        {
+            NoteBook nb = new NoteBook();
+            Assert.NotNull(nb.ListExams());
+            Assert.Empty(nb.ListExams());
+
+
         }
     }
 }
