@@ -61,5 +61,23 @@ namespace NoteBook
                 MessageBox.Show(x.Message);
             }
         }
+
+        /// <summary>
+        /// Open new window of edit exam
+        /// Throw exception if no exams are exist
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void GoPrintAverage(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                ListExamsWindow secondWindow = new ListExamsWindow(notebook);
+                secondWindow.ShowDialog();
+            }catch(Exception x)
+            {
+                MessageBox.Show(x.Message);
+            }
+        }
     }
 }
