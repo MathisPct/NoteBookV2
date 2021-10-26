@@ -1,6 +1,7 @@
 using System;
 using Xunit;
 using Logic;
+using System.Collections.Generic;
 
 namespace TestLogic
 {
@@ -44,6 +45,45 @@ namespace TestLogic
             u.Remove(m1);
             //list must be empty after removing
             Assert.Empty(u.ListModules());
+        }
+
+        [Fact]
+        public void TestComputeAverages()
+        {
+            Unit u = new Unit();
+            List<Exam> exams = new List<Exam>();
+
+            //Unit contains no module
+            Assert.Empty(u.ComputeAverages(exams.ToArray()));
+
+            //Unit contains modules with no average
+            Module m0 = new Module();
+            Module m1 = new Module();
+            u.Add(m0);
+            u.Add(m1);
+            Assert.Empty(u.ComputeAverages(exams.ToArray()));
+
+            //Unit contains one module with average and other with no average
+            Module m2 = new Module();
+            Exam e1 = new Exam();
+            e1.Score = 14;
+            e1.Coef = 2;
+            e1.Module = m2;
+            exams.Add(e1);
+            u.Add(m2);
+            Assert.Null(u.ComputeAverages(exams.ToArray())[0]);
+            Assert.Null(u.ComputeAverages(exams.ToArray())[1]);
+            Assert.Equal(14f, u.ComputeAverages(exams.ToArray())[2].Average, 2);
+
+            //Unit contains several modules with average
+            Module m3 = new Module();
+            Exam e2 = new Exam();
+            e2.Score = 16;
+            e2.Coef = 3;
+            e2.Module = m3;
+            exams.Add(e2);
+            u.Add(m3);
+            Assert.Equal(16f, u.ComputeAverages(exams.ToArray())[3].Average, 2);
         }
     }
 }

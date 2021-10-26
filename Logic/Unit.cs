@@ -49,5 +49,32 @@ namespace Logic
             return obj is Unit unit &&
                    Name == unit.Name;
         }
+
+        /// <summary>
+        /// Give list of average of modules which are contains in one unit
+        /// Return empty list if all AvgScore of modules are null
+        /// </summary>
+        /// <param name="exams">List of exams</param>
+        /// <returns></returns>
+        public AvgScore[] ComputeAverages(Exam[] exams)
+        {
+            List<AvgScore> modulesAverage = new List<AvgScore>();
+            int moduleLength = modules.ToArray().Length;
+            int nullableAverage = 0;
+            //iterate all modules of unit
+            foreach (Module module in modules)
+            {
+                if(module.ComputeAverage(exams) == null)
+                {
+                    nullableAverage++;
+                }
+                modulesAverage.Add((module.ComputeAverage(exams)));
+            }
+            if(nullableAverage == moduleLength)
+            {
+                modulesAverage = new List<AvgScore>();
+            }
+            return modulesAverage.ToArray();
+        }
     }
 }
