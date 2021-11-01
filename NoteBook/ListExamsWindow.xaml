@@ -25,5 +25,8 @@
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
+        <ListBox x:Name="scores" >
+            
+        </ListBox>
     </Grid>
 </Window>

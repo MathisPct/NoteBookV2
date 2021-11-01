@@ -109,5 +109,47 @@ namespace Logic
         {
             return exams.ToArray();
         }
+
+        public AvgScore[] ComputeScores()
+        {
+            List<AvgScore> averages = new List<AvgScore>();
+            float scoreUnitsSum = 0;
+            float coefUnitsSum = 0;
+            //iterate all units to get list of modules averages
+            foreach (Unit unit in this.units)
+            {
+                float scoreModuleSum = 0;
+                float coefModuleSum = 0;
+                //if unit contains averages of modules
+                if ((unit.ComputeAverages(exams.ToArray()).Length) > 0)
+                {
+                    //all average of modules of unit
+                    foreach (AvgScore avgModule in unit.ComputeAverages(exams.ToArray()))
+                    {
+                        //count sum of score and coef of modules
+                        if (avgModule != null)
+                        {
+                            averages.Add(avgModule);
+                            scoreModuleSum += avgModule.Average * avgModule.GetPedagocicalElement().Coef;
+                            coefModuleSum += avgModule.GetPedagocicalElement().Coef;
+                        }
+                    }
+                    //calculate average of current unit
+                    AvgScore avgUnit = new AvgScore(scoreModuleSum / coefModuleSum, unit);
+                    averages.Add(avgUnit);
+                    //calculate sum of score and sum of coef of units
+                    scoreUnitsSum += avgUnit.Average * unit.Coef;
+                    coefUnitsSum += unit.Coef;
+                }
+            }
+            if(averages.ToArray().Length > 0)
+            {
+                PedagocicalElement elementAvgGlobal = new PedagocicalElement();
+                elementAvgGlobal.Name = "Global average";
+                AvgScore avgGlobal = new AvgScore(scoreUnitsSum / coefUnitsSum, elementAvgGlobal);
+                averages.Add(avgGlobal);
+            }
+            return averages.ToArray();
+        }
     }
 }

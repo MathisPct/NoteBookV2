@@ -82,7 +82,6 @@ namespace TestLogic
             Exam exam1 = new Exam();
             Exam exam2 = new Exam();
             nb.AddExam(exam1);
-            Assert.Equal(1, nb.ListExams().Length);
             Assert.Single(nb.ListExams());
             //test if exam has been added
             Assert.Same(nb.ListExams()[0], exam1);
@@ -102,6 +101,64 @@ namespace TestLogic
             Assert.Empty(nb.ListExams());
 
 
+        }
+
+        [Fact]
+        public void ComputeScores()
+        {
+            NoteBook nb = new NoteBook();
+            //verify if global average has been not added
+            Assert.NotNull(nb.ComputeScores());
+            Assert.Empty(nb.ComputeScores());
+
+            //test with no exams and 1 unit
+            Unit sociologie = new Unit();
+            sociologie.Name = "socio";
+            sociologie.Coef = 3;
+            nb.AddUnit(sociologie);
+            Assert.Empty(nb.ComputeScores());
+
+            //test with one unit and his module contains exams
+            Exam e1 = new Exam
+            {
+                Coef = 2,
+                Score = 20
+            };
+            Exam e2 = new Exam
+            {
+                Coef = 3,
+                Score = 17
+            };
+            Module m1 = new Module
+            {
+                Coef = 2
+            };
+            e1.Module = m1;
+            e2.Module = m1;
+            nb.AddExam(e1);
+            nb.AddExam(e2);
+            sociologie.Add(m1);
+            Assert.NotEmpty(nb.ComputeScores());
+            Assert.Equal(18.2f, nb.ComputeScores()[1].Average, 2);
+
+            //test with two units and their modules contains exams
+            Exam e3 = new Exam();
+            e3.Coef = 2;
+            e3.Score = 18;
+            nb.AddExam(e3);
+            Module m2 = new Module();
+            e3.Module = m2;
+            m2.Coef = 3;
+            Unit info = new Unit();
+            info.Name = "Info";
+            info.Coef = 1;
+            info.Add(m2);
+            nb.AddUnit(info);
+            Assert.Equal(5, nb.ComputeScores().Length);
+            Assert.Equal(18f, nb.ComputeScores()[3].Average, 2);
+
+            //test global average
+            Assert.Equal(18.15, nb.ComputeScores()[4].Average, 3);
         }
     }
 }

@@ -38,10 +38,10 @@ namespace NoteBook
 
         private void DrawExams()
         {
-            exams.Items.Clear();
-            foreach(Exam e in nb.ListExams())
+            scores.Items.Clear();
+            foreach(AvgScore avg in nb.ComputeScores())
             {
-                exams.Items.Add(e);
+                scores.Items.Add(avg);
             }
         }
     }

@@ -37,6 +37,10 @@ namespace Logic
         /// Element which we will calculate average of exams
         /// </summary>
         private PedagocicalElement element;
+        public PedagocicalElement GetPedagocicalElement()
+        {
+            return element;
+        }
 
         public AvgScore(float average, PedagocicalElement pedagocicalElement)
         {
