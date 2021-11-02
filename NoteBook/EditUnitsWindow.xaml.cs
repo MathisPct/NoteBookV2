@@ -159,6 +159,8 @@ namespace NoteBook
                 {
                     Unit u = (Unit)(this.listUnits.SelectedItem);
                     u.Remove(m);
+                    //delete all exams contains in deleted module 
+                    MessageBox.Show($"{notebook.RemoveExams(m)} examens appartenant au module supprimées");
                     storage.Save(notebook);
                     DrawModules();
                 }

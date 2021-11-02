@@ -93,8 +93,8 @@ namespace TestLogic
             nb.AddExam(exam2);
             Assert.Equal(2, nb.ListExams().Length);
             Assert.Same(nb.ListExams()[1], exam2);
-            //test add same exams
-            Assert.Throws<Exception>(() => { nb.AddExam(exam1); });
+            ////test add same exams
+            //Assert.Throws<Exception>(() => { nb.AddExam(exam1); });
         }
 
         [Fact]
@@ -105,6 +105,38 @@ namespace TestLogic
             Assert.Empty(nb.ListExams());
 
 
+        }
+
+        [Fact]
+        public void RemoveExams()
+        {
+            NoteBook nb = new NoteBook();
+            Module maths = new Module()
+            {
+                Coef = 3,
+                Name = "maths"
+            };
+            Exam exam1 = new Exam()
+            {
+                Module = maths
+            };
+            //test with one exam
+            nb.AddExam(exam1);
+            Assert.Equal(1, nb.RemoveExams(maths));
+            Assert.Empty(nb.ListExams());
+            //test with two exams
+            Exam exam2 = new Exam()
+            {
+                Module = maths
+            };
+            nb.AddExam(exam2);
+            Exam exam3 = new Exam()
+            {
+                Module = maths
+            };
+            nb.AddExam(exam3);
+            Assert.Equal(2, nb.RemoveExams(maths));
+            Assert.Empty(nb.ListExams());
         }
 
         [Fact]

@@ -98,11 +98,21 @@ namespace Logic
         /// <param name="exam"></param>
         public void AddExam(Exam exam)
         {
-            if (exams.Exists(item => item.Equals(exam)))
-            {
-                throw new Exception("Exam is already exist");
-            }
+            //if (exams.Exists(item => item.Equals(exam)))
+            //{
+            //    throw new Exception("Exam is already exist");
+            //}
             exams.Add(exam);
+        }
+
+        /// <summary>
+        /// Remove all exams which refer to specific module
+        /// </summary>
+        /// <param name="m">Module to search</param>
+        /// <returns></returns>
+        public int RemoveExams(Module m)
+        {
+            return exams.RemoveAll(exam => exam.Module.Equals(m));
         }
 
         /// <summary>
