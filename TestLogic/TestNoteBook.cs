@@ -34,7 +34,7 @@ namespace TestLogic
             u2.Name = "test";
             u2.Coef = 3;
             Unit u3 = new Unit();
-            u3.Coef = 2;
+            u3.Coef = 3;
             u3.Name = "test";
             nb.AddUnit(u2);
             Assert.Throws<Exception>(() => { nb.AddUnit(u3); });
@@ -80,7 +80,11 @@ namespace TestLogic
         {
             NoteBook nb = new NoteBook();
             Exam exam1 = new Exam();
-            Exam exam2 = new Exam();
+            Exam exam2 = new Exam()
+            {
+                Coef = 2,
+                Teacher = "eeze"
+            };
             nb.AddExam(exam1);
             Assert.Single(nb.ListExams());
             //test if exam has been added

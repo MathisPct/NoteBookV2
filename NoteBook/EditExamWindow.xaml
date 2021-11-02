@@ -34,6 +34,9 @@
         <Label Grid.Row="2" Grid.Column="0" Content="Score:" FontSize="20" VerticalAlignment="Center" HorizontalAlignment="Center"/>
         <TextBox x:Name="txtBoxScore" Grid.Row="2" Grid.Column="1" FontSize="20" TextWrapping="Wrap" Margin="10"/>
 
+        <Label Grid.Row="2" Grid.Column="2" Content="Coef:" FontSize="20" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        <TextBox x:Name="txtBoxCoef" Grid.Row="2" Grid.Column="3" FontSize="20" TextWrapping="Wrap" Margin="10"/>
+
         <Button Grid.Column="0" Grid.Row="3" Grid.ColumnSpan="2" Content="Validate" FontSize="20" MaxHeight="30" MaxWidth="100" Click="Validate" />
         <Button Grid.Column="2" Grid.Row="3" Grid.ColumnSpan="2" Content="Cancel" FontSize="20" MaxHeight="30" MaxWidth="100" Click="Cancel" />
     </Grid>

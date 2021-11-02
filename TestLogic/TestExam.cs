@@ -59,5 +59,28 @@ namespace TestLogic
             //module non nul
             Assert.NotNull(exam.Module);
         }
+
+        [Fact]
+        public void TestEquals()
+        {
+            Module maths = new Module();
+            maths.Coef = 5;
+            maths.Name = "Maths";
+            Exam e1 = new Exam();
+            e1.Module = maths;
+            e1.Coef = 3;
+            e1.IsAbsent = false;
+            e1.Teacher = "Machin";
+            e1.Score = 20;
+            e1.DateExam = new DateTime(2021, 10, 28, 10, 20, 49);
+            Exam e2 = new Exam();
+            e2.Module = maths;
+            e2.Coef = 3;
+            e2.IsAbsent = false;
+            e2.Teacher = "Machin";
+            e2.Score = 20;
+            e2.DateExam = new DateTime(2021, 10, 28, 10, 20, 49);
+            Assert.True(e1.Equals(e2));
+        }
     }
 }

@@ -39,9 +39,14 @@ namespace NoteBook
         private void DrawExams()
         {
             scores.Items.Clear();
+            exams.Items.Clear();
             foreach(AvgScore avg in nb.ComputeScores())
             {
                 scores.Items.Add(avg);
+            }
+            foreach(Exam exam in nb.ListExams())
+            {
+                exams.Items.Add(exam);
             }
         }
     }

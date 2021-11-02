@@ -50,5 +50,17 @@ namespace TestLogic
             e.Coef = 5f;
             Assert.Equal("Name: Math\nCoef: 5", e.ToString());
         }
+
+        [Fact]
+        public void TestEquals()
+        {
+            PedagocicalElement e1 = new PedagocicalElement();
+            e1.Name = "Français";
+            e1.Coef = 3;
+            PedagocicalElement e2 = new PedagocicalElement();
+            e2.Name = "Français";
+            e2.Coef = 3;
+            Assert.True(e1.Equals(e2));
+        }
     }
 }

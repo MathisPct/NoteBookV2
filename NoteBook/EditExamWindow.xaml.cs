@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using Logic;
+using Storage;
 
 namespace NoteBook
 {
@@ -30,14 +31,17 @@ namespace NoteBook
         /// </summary>
         private Exam exam;
 
+        private IStorage storage;
+
         /// <summary>
         /// Constructor initialization
         /// </summary>
         /// <param name="nb">Current notebook of application</param>
-        public EditExamWindow(Logic.NoteBook nb)
+        public EditExamWindow(Logic.NoteBook nb, IStorage storage)
         {
             this.nb = nb;
             this.exam = new Exam();
+            this.storage = storage;
             InitializeComponent();
             DrawModules(nb.ListModules());
             InitExamComponent();
@@ -65,6 +69,7 @@ namespace NoteBook
             dateExam.SelectedDate = exam.DateExam;
             checkAbsent.IsChecked = exam.IsAbsent;
             txtBoxScore.Text = exam.Score.ToString();
+            txtBoxCoef.Text = exam.Coef.ToString();
         }
 
         /// <summary>
@@ -81,7 +86,9 @@ namespace NoteBook
                 exam.IsAbsent = checkAbsent.IsEnabled;
                 exam.Teacher = txtBoxTeacher.Text;
                 exam.Score = (float)Convert.ToDouble(txtBoxScore.Text);
+                exam.Coef = (float)Convert.ToDouble(txtBoxCoef.Text);
                 nb.AddExam(exam);
+                storage.Save(nb);
                 this.Close();
             }
             catch(Exception X)

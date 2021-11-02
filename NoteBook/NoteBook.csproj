@@ -142,6 +142,10 @@
       <Project>{1cffaca7-c8fe-4181-b760-785127ea8ca1}</Project>
       <Name>Logic</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Storage\Storage.csproj">
+      <Project>{aec40ee1-4820-4d78-81af-9da54fc5577f}</Project>
+      <Name>Storage</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Resource Include="book.png" />

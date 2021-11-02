@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using Logic;
+using Storage;
 
 namespace NoteBook
 {
@@ -22,9 +23,12 @@ namespace NoteBook
     {
         private Logic.NoteBook notebook;
 
-        public EditUnitsWindow(Logic.NoteBook nb)
+        private IStorage storage;
+
+        public EditUnitsWindow(Logic.NoteBook nb, IStorage storage)
         {
             this.notebook = nb;
+            this.storage = storage;
             InitializeComponent();
             DrawUnits();
         }
@@ -67,6 +71,7 @@ namespace NoteBook
                 EditElementWindow third = new EditElementWindow(u);
                 if(third.ShowDialog() == true)
                 {
+                    storage.Save(notebook);
                     //refresh of list
                     DrawUnits();
                 }
@@ -88,6 +93,7 @@ namespace NoteBook
                 if(third.ShowDialog() == true)
                 {
                     notebook.AddUnit(newUnit);
+                    storage.Save(notebook);
                     DrawUnits();
                 }
             }catch(Exception x)
@@ -108,6 +114,7 @@ namespace NoteBook
                 if(listUnits.SelectedItem is Unit unit)
                 {
                     this.notebook.RemoveUnit(unit);
+                    storage.Save(notebook);
                     DrawUnits();
                 }
             }
@@ -130,6 +137,7 @@ namespace NoteBook
                 EditElementWindow third = new EditElementWindow(m);
                 if(third.ShowDialog() == true)
                 {
+                    storage.Save(notebook);
                     //refresh of list
                     DrawModules();
                 }
@@ -149,6 +157,7 @@ namespace NoteBook
                 {
                     Unit u = (Unit)(this.listUnits.SelectedItem);
                     u.Remove(m);
+                    storage.Save(notebook);
                     DrawModules();
                 }
             }catch(Exception x)
@@ -180,6 +189,7 @@ namespace NoteBook
                     if (third.ShowDialog() == true)
                     {
                         unit.Add(newModule);
+                        storage.Save(notebook);
                         DrawModules();
                     }
                 }

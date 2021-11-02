@@ -22,7 +22,7 @@ namespace Logic
             foreach (Exam exam in exams)
             {
                 //exams of current module
-                if(exam.Module == this)
+                if(exam.Module.Equals(this))
                 {
                     canCalculate = true;
                     scoreSum += (float)exam.Score * exam.Coef;
@@ -35,6 +35,12 @@ namespace Logic
                 avgScore = new AvgScore(avg, this);
             }
             return avgScore;
+        }
+
+        public override bool Equals(object obj)
+        {
+            return obj is Module module &&
+                   base.Equals(module);
         }
     }
 }

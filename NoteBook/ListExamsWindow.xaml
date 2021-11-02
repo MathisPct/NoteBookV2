@@ -7,7 +7,11 @@
         mc:Ignorable="d"
         Title="ListExamsWindow" Height="450" Width="800">
     <Grid>
-        <ListBox x:Name="exams" HorizontalContentAlignment="Stretch">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <ListBox x:Name="exams" HorizontalContentAlignment="Stretch" Grid.Row="0">
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <Grid>
@@ -25,7 +29,7 @@
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
-        <ListBox x:Name="scores" >
+        <ListBox x:Name="scores" Grid.Row="1"  HorizontalAlignment="Stretch">
             
         </ListBox>
     </Grid>

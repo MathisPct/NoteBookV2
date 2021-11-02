@@ -3,22 +3,26 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Runtime.Serialization;
 
 namespace Logic
 {
     /// <summary>
     /// Is a facade of the logic layer
     /// </summary>
+    [DataContract]
     public class NoteBook
     {
         /// <summary>
         /// store all the units
         /// </summary>
+        [DataMember]
         private List<Unit> units;
 
         /// <summary>
         /// Contains all the exams
         /// </summary>
+        [DataMember]
         private List<Exam> exams;
 
         /// <summary>
@@ -46,7 +50,7 @@ namespace Logic
         public void AddUnit(Unit unit)
         {
             bool findSame = false;
-            int index = 0;
+            int index = 0;  
             while((index < ListUnits().Length) && (!findSame))
             {
                 if (ListUnits()[index].Equals(unit))
@@ -150,6 +154,12 @@ namespace Logic
                 averages.Add(avgGlobal);
             }
             return averages.ToArray();
+        }
+        public override bool Equals(object obj)
+        {
+            return obj is NoteBook book &&
+                   units.SequenceEqual(book.units) &&
+                   exams.SequenceEqual(book.exams);
         }
     }
 }

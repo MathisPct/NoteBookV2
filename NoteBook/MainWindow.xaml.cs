@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Logic;
+using Storage;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -22,9 +24,12 @@ namespace NoteBook
     {
         private Logic.NoteBook notebook;
 
+        private IStorage storage;
+
         public MainWindow()
         {
-            this.notebook = new Logic.NoteBook();
+            storage = new JsonStorage("data");
+            this.notebook = storage.Load();
             InitializeComponent();
         }
 
@@ -40,7 +45,7 @@ namespace NoteBook
         /// <param name="e"></param>
         private void GoEditUnits(object sender, RoutedEventArgs e)
         {
-            EditUnitsWindow second = new EditUnitsWindow(notebook);
+            EditUnitsWindow second = new EditUnitsWindow(notebook, storage);
             second.ShowDialog();
         }
 
@@ -54,7 +59,7 @@ namespace NoteBook
         {
             try
             {
-                EditExamWindow second = new EditExamWindow(notebook);
+                EditExamWindow second = new EditExamWindow(notebook, storage);
                 second.ShowDialog();
             }catch(Exception x)
             {

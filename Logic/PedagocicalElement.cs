@@ -1,16 +1,21 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.Serialization;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace Logic
 {
+    [DataContract]
+    [KnownType(typeof(Module))]
+    [KnownType(typeof(Unit))]
     public class PedagocicalElement
     {
         /// <summary>
         /// Name of the element
         /// </summary>
+        [DataMember]
         private string name = "";
         public string Name
         {
@@ -25,6 +30,7 @@ namespace Logic
         /// <summary>
         /// Coef of the element
         /// </summary>
+        [DataMember]
         private float coef = 0;
         public float Coef
         {
@@ -39,6 +45,13 @@ namespace Logic
         public override string ToString()
         {
             return "Name" + ": " + this.name + "\nCoef: " + this.coef;
+        }
+
+        public override bool Equals(object obj)
+        {
+            return obj is PedagocicalElement element &&
+                   name == element.name &&
+                   coef == element.coef;
         }
     }
 }

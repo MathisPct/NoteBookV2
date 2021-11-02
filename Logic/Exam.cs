@@ -1,22 +1,26 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.Serialization;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace Logic
 {
+    [DataContract]
     public class Exam
     {
         /// <summary>
         /// Name of teacher concern by the exam
         /// </summary>
+        [DataMember]
         private string teacher;
         public string Teacher { get => teacher; set => teacher = value; }
 
         /// <summary>
         /// Date of the exam
         /// </summary>
+        [DataMember]
         private DateTime dateExam = DateTime.Now;
 
         public DateTime DateExam { get => dateExam; set => dateExam = value; }
@@ -24,6 +28,7 @@ namespace Logic
         /// <summary>
         /// Coef of the exam
         /// </summary>
+        [DataMember]
         private float coef;
 
         public float Coef { 
@@ -38,6 +43,7 @@ namespace Logic
         /// <summary>
         /// Allow to know if person is absent
         /// </summary>
+        [DataMember]
         private bool isAbsent;
 
         public bool IsAbsent { get => isAbsent; set => isAbsent = value; }
@@ -45,6 +51,7 @@ namespace Logic
         /// <summary>
         /// Score getting in exam
         /// </summary>
+        [DataMember]
         private float score;
         public float Score { 
             get => score;
@@ -54,7 +61,7 @@ namespace Logic
                 score = value;
             }
         }
-
+        [DataMember]
         private Module module;
 
         public Module Module { 
@@ -75,5 +82,20 @@ namespace Logic
             this.module = new Module();
         }
 
+        public override bool Equals(object obj)
+        {
+            return obj is Exam exam &&
+                   teacher == exam.teacher &&
+                   dateExam.Year == exam.dateExam.Year &&
+                   dateExam.Month == exam.dateExam.Month &&
+                   dateExam.Day == exam.dateExam.Day &&
+                   dateExam.Hour == exam.dateExam.Hour &&
+                   dateExam.Minute == exam.dateExam.Minute &&
+                   dateExam.Second == exam.dateExam.Second &&
+                   coef == exam.coef &&
+                   isAbsent == exam.isAbsent &&
+                   score == exam.score &&
+                   module.Equals(exam.module);
+        }
     }
 }

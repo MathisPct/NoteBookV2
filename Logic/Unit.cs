@@ -1,16 +1,19 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.Serialization;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace Logic
 {
+    [DataContract]
     public class Unit : PedagocicalElement
     {
         /// <summary>
         /// List of mudules that unit contains
         /// </summary>
+        [DataMember]
         private List<Module> modules; 
 
         /// <summary>
@@ -44,12 +47,6 @@ namespace Logic
             this.modules.Remove(m);
         }
 
-        public override bool Equals(object obj)
-        {
-            return obj is Unit unit &&
-                   Name == unit.Name;
-        }
-
         /// <summary>
         /// Give list of average of modules which are contains in one unit
         /// Return empty list if all AvgScore of modules are null
@@ -76,5 +73,12 @@ namespace Logic
             }
             return modulesAverage.ToArray();
         }
-    }
+
+        public override bool Equals(object obj)
+        {
+            return obj is Unit unit &&
+                   base.Equals(unit) &&
+                   modules.All(unit.modules.Contains);
+        }
+    } 
 }
