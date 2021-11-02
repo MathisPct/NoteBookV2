@@ -11,7 +11,36 @@
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <ListBox x:Name="exams" HorizontalContentAlignment="Stretch" Grid.Row="0">
+        <ListBox x:Name="exams" HorizontalContentAlignment="Stretch" Grid.Row="0" MouseDoubleClick="EditExam" >
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="5*"/>
+                        </Grid.RowDefinitions>
+                        <Label Grid.Column="0" Grid.Row="0" Content="Date examen"/>
+                        <Label Grid.Column="1" Grid.Row="0" Content="Module"/>
+                        <Label Grid.Column="2" Grid.Row="0" Content="Professeur"/>
+                        <Label Grid.Column="3" Grid.Row="0" Content="Note"/>
+                        <Label Grid.Column="4" Grid.Row="0" Content="Coefficient"/>
+                        <Label Grid.Column="0" Grid.Row="1" Content="{Binding DateExam}" />
+                        <Label Grid.Column="1" Grid.Row="1"  Content="{Binding Module.Name}" />
+                        <Label Grid.Column="2" Grid.Row="1"  Content="{Binding Teacher}" />
+                        <Label Grid.Column="3" Grid.Row="1"  Content="{Binding Score}" />
+                        <Label Grid.Column="4" Grid.Row="1"  Content="{Binding Coef}" />
+                    </Grid>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+        <ListBox x:Name="scores" Grid.Row="1"  HorizontalAlignment="Stretch">
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <Grid>
@@ -21,16 +50,13 @@
                             <ColumnDefinition Width="*"/>
                             <ColumnDefinition Width="*"/>
                         </Grid.ColumnDefinitions>
-                        <Label Grid.Column="0" Content="{Binding DateExam}" />
-                        <Label Grid.Column="1" Content="{Binding Module.Name}" />
-                        <Label Grid.Column="2" Content="{Binding Teacher}" />
-                        <Label Grid.Column="3" Content="{Binding Score}" />
+                        <Label Grid.Column="0" Content="Element: " />
+                        <Label Grid.Column="1" Content="{Binding ElementName}" />
+                        <Label Grid.Column="2" Content="Moyenne: " />
+                        <Label Grid.Column="3" Content="{Binding Average}" />
                     </Grid>
                 </DataTemplate>
             </ListBox.ItemTemplate>
-        </ListBox>
-        <ListBox x:Name="scores" Grid.Row="1"  HorizontalAlignment="Stretch">
-            
         </ListBox>
     </Grid>
 </Window>

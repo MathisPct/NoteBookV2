@@ -65,9 +65,15 @@ namespace NoteBook
         {
             try
             {
-                EditExamWindow second = new EditExamWindow(notebook, storage);
-                second.ShowDialog();
-            }catch(Exception x)
+                Exam newExam = new Exam();
+                EditExamWindow second = new EditExamWindow(notebook, newExam);
+                if (second.ShowDialog() == true)
+                {
+                    notebook.AddExam(newExam);
+                    storage.Save(notebook);
+                }
+            }
+            catch (Exception x)
             {
                 MessageBox.Show(x.Message);
             }
@@ -83,7 +89,7 @@ namespace NoteBook
         {
             try
             {
-                ListExamsWindow secondWindow = new ListExamsWindow(notebook);
+                ListExamsWindow secondWindow = new ListExamsWindow(notebook, storage);
                 secondWindow.ShowDialog();
             }catch(Exception x)
             {

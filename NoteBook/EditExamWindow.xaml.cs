@@ -33,15 +33,10 @@ namespace NoteBook
 
         private IStorage storage;
 
-        /// <summary>
-        /// Constructor initialization
-        /// </summary>
-        /// <param name="nb">Current notebook of application</param>
-        public EditExamWindow(Logic.NoteBook nb, IStorage storage)
+        public EditExamWindow(Logic.NoteBook nb, Exam exam)
         {
             this.nb = nb;
-            this.exam = new Exam();
-            this.storage = storage;
+            this.exam = exam;
             InitializeComponent();
             DrawModules(nb.ListModules());
             InitExamComponent();
@@ -70,6 +65,11 @@ namespace NoteBook
             checkAbsent.IsChecked = exam.IsAbsent;
             txtBoxScore.Text = exam.Score.ToString();
             txtBoxCoef.Text = exam.Coef.ToString();
+            txtBoxTeacher.Text = exam.Teacher;
+            if(exam.Module != null)
+            {
+                boxModules.SelectedItem = exam.Module;
+            }
         }
 
         /// <summary>
@@ -87,9 +87,7 @@ namespace NoteBook
                 exam.Teacher = txtBoxTeacher.Text;
                 exam.Score = (float)Convert.ToDouble(txtBoxScore.Text);
                 exam.Coef = (float)Convert.ToDouble(txtBoxCoef.Text);
-                nb.AddExam(exam);
-                storage.Save(nb);
-                this.Close();
+                DialogResult = true;
             }
             catch(Exception X)
             {
