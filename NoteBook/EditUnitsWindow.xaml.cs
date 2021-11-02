@@ -135,8 +135,10 @@ namespace NoteBook
             if(listModules.SelectedItem is Module m)
             {
                 EditElementWindow third = new EditElementWindow(m);
-                if(third.ShowDialog() == true)
+                List<Exam> examToModify = notebook.ListExams().Where(exam => exam.Module.Equals(m)).ToList();
+                if (third.ShowDialog() == true)
                 {
+                    examToModify.ForEach(exam => exam.Module = m);
                     storage.Save(notebook);
                     //refresh of list
                     DrawModules();

@@ -30,21 +30,22 @@ namespace Logic
         /// </summary>
         public string ElementName
         {
-            get => element.Name;
+            get => Element.Name;
         }
 
         /// <summary>
         /// Element which we will calculate average of exams
         /// </summary>
         private PedagocicalElement element;
+        public PedagocicalElement Element { get => element; set => element = value; }
         public PedagocicalElement GetPedagocicalElement()
         {
-            return element;
+            return Element;
         }
 
         public AvgScore(float average, PedagocicalElement pedagocicalElement)
         {
-            this.element = pedagocicalElement;
+            this.Element = pedagocicalElement;
             this.average = average;
         }
 

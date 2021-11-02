@@ -45,8 +45,14 @@ namespace NoteBook
         /// <param name="e"></param>
         private void GoEditUnits(object sender, RoutedEventArgs e)
         {
-            EditUnitsWindow second = new EditUnitsWindow(notebook, storage);
-            second.ShowDialog();
+            try
+            {
+                EditUnitsWindow second = new EditUnitsWindow(notebook, storage);
+                second.ShowDialog();
+            }catch(Exception x)
+            {
+                MessageBox.Show(x.Message);
+            }
         }
 
         /// <summary>
