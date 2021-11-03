@@ -11,7 +11,7 @@
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <ListBox x:Name="exams" HorizontalContentAlignment="Stretch" Grid.Row="0" MouseDoubleClick="EditExam" >
+        <ListBox x:Name="exams" HorizontalContentAlignment="Stretch" Grid.Row="0" MouseDoubleClick="EditExam" MouseRightButtonUp="RemoveExam" >
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <Grid>

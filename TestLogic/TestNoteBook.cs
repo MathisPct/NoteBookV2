@@ -138,6 +138,19 @@ namespace TestLogic
             Assert.Equal(2, nb.RemoveExams(maths));
             Assert.Empty(nb.ListExams());
         }
+        
+        [Fact]
+        public void RemoveExam()
+        {
+            NoteBook nb = new NoteBook();
+            Exam e = new Exam();
+            nb.AddExam(e);
+            nb.RemoveExam(e);
+            Assert.Empty(nb.ListUnits());
+
+            //exam which not exist in list of exams
+            Assert.Throws<Exception>(() => { nb.RemoveExam(e); });
+        }
 
         [Fact]
         public void ComputeScores()

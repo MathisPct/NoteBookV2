@@ -116,6 +116,15 @@ namespace Logic
         }
 
         /// <summary>
+        /// Remove exam from current list of exams
+        /// </summary>
+        /// <param name="e">Exam to remove in list of exams</param>
+        public void RemoveExam(Exam e)
+        {
+            if (!this.exams.Remove(e)) throw new Exception("You want to remove a exam which not exists");
+        }
+
+        /// <summary>
         /// Get all of exams in array
         /// </summary>
         /// <returns>Array of exams</returns>

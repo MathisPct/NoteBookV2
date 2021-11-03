@@ -68,5 +68,26 @@ namespace NoteBook
                 }
             }
         }
+
+        private void RemoveExam(object sender, MouseButtonEventArgs e)
+        {
+            if(exams.SelectedItem is Exam exam)
+            {
+                MessageBoxResult messageBoxResult = MessageBox.Show("Delete this exam?", "Delete confirmation", System.Windows.MessageBoxButton.YesNo);
+                if(messageBoxResult == MessageBoxResult.Yes)
+                {
+                    try
+                    {
+                        nb.RemoveExam(exam);
+                        storage.Save(nb);
+                        DrawExams();
+                    }
+                    catch (Exception x)
+                    {
+                        MessageBox.Show(x.Message);
+                    }
+                }
+            }
+        }
     }
 }
