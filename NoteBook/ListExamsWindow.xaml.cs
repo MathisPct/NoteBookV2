@@ -73,7 +73,7 @@ namespace NoteBook
         {
             if(exams.SelectedItem is Exam exam)
             {
-                MessageBoxResult messageBoxResult = MessageBox.Show("Delete this exam?", "Delete confirmation", System.Windows.MessageBoxButton.YesNo);
+                MessageBoxResult messageBoxResult = MessageBox.Show("Delete selected exam?", "Delete confirmation", System.Windows.MessageBoxButton.YesNo);
                 if(messageBoxResult == MessageBoxResult.Yes)
                 {
                     try

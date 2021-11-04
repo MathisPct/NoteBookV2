@@ -48,6 +48,18 @@ namespace TestLogic
             nb.AddUnit(u);
             nb.RemoveUnit(u);
             Assert.Empty(nb.ListUnits());
+
+            //unit contains modules
+            Module module = new Module();
+            Module module2 = new Module()
+            {
+                Name = "Maths"
+            };
+            u.Add(module);
+            u.Add(module2);
+            nb.AddUnit(u);
+            nb.RemoveUnit(u);
+            Assert.Empty(nb.ListModules());
         }
 
         [Fact]

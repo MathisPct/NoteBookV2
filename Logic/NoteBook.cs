@@ -69,6 +69,9 @@ namespace Logic
         /// <param name="u">unit which must be removed in list</param>
         public void RemoveUnit(Unit u)
         {
+            //remove all exams refer to modules which are deleted
+            u.ListModules().ToList().ForEach(module => RemoveExams(module));
+            //u.ListModules().ToList().ForEach(module => u.Remove(module));
             this.units.Remove(u);
         }
 
@@ -80,10 +83,6 @@ namespace Logic
         public Module[] ListModules()
         {
             List<Module> modules = new List<Module>();
-            if(ListUnits().Length == 0)
-            {
-                throw new Exception("Notebook contains no units");
-            }
             // iterate list of unit to get all modules of this unit
             foreach(var unit in ListUnits())
             {

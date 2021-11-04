@@ -49,10 +49,10 @@ namespace NoteBook
         /// </summary>
         private void DrawModules()
         {
+            listModules.Items.Clear();
             if (listUnits.SelectedItem is Unit unit)
             {
                 var list = unit.ListModules();
-                listModules.Items.Clear();
                 foreach (Module m in list)
                     listModules.Items.Add(m);
             }
@@ -113,9 +113,14 @@ namespace NoteBook
             {
                 if(listUnits.SelectedItem is Unit unit)
                 {
-                    this.notebook.RemoveUnit(unit);
-                    storage.Save(notebook);
-                    DrawUnits();
+                    MessageBoxResult messageBoxResult = MessageBox.Show("Delete selected unit?", "Delete confirmation", System.Windows.MessageBoxButton.YesNo);
+                    if(messageBoxResult == MessageBoxResult.Yes)
+                    {
+                        this.notebook.RemoveUnit(unit);
+                        DrawUnits();
+                        DrawModules();
+                        storage.Save(notebook);
+                    }
                 }
             }
             catch(Exception x)
@@ -135,6 +140,7 @@ namespace NoteBook
             if(listModules.SelectedItem is Module m)
             {
                 EditElementWindow third = new EditElementWindow(m);
+                // TODO: résoudre soucis de la logique dans l'IHM
                 List<Exam> examToModify = notebook.ListExams().Where(exam => exam.Module.Equals(m)).ToList();
                 if (third.ShowDialog() == true)
                 {
@@ -158,11 +164,13 @@ namespace NoteBook
                 if (listModules.SelectedItem is Module m)
                 {
                     Unit u = (Unit)(this.listUnits.SelectedItem);
-                    u.Remove(m);
-                    //delete all exams contains in deleted module 
-                    MessageBox.Show($"{notebook.RemoveExams(m)} examens appartenant au module supprimées");
-                    storage.Save(notebook);
-                    DrawModules();
+                    MessageBoxResult messageBoxResult = MessageBox.Show("Delete selected module?", "Delete confirmation", System.Windows.MessageBoxButton.YesNo);
+                    if (messageBoxResult == MessageBoxResult.Yes)
+                    {
+                        u.Remove(m);
+                        storage.Save(notebook);
+                        DrawModules();
+                    }
                 }
             }catch(Exception x)
             {
