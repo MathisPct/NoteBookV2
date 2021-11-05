@@ -167,6 +167,7 @@ namespace NoteBook
                     MessageBoxResult messageBoxResult = MessageBox.Show("Delete selected module?", "Delete confirmation", System.Windows.MessageBoxButton.YesNo);
                     if (messageBoxResult == MessageBoxResult.Yes)
                     {
+                        notebook.RemoveExams(m);
                         u.Remove(m);
                         storage.Save(notebook);
                         DrawModules();
