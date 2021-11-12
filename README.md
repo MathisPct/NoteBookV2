@@ -24,11 +24,11 @@ Les différents éléments scénaristiques, lieux et personnages utilisés dans 
 <h2>Documentation</h2>
 <h3>Diagramme de cas d'utilisation</h3>
 <img src="Conception/Media/Features.jpg" alt="Fonctionnalités de l'application">
-<h3>Diagramme de classe partie métier</h3>
+<h3>Diagramme de classes partie métier</h3>
 <img src="Conception/Media/logic Class Diagram.jpg" alt="Diagramme de classe partie métier">
-<h3>Diagramme de classe partie hmi</h3>
+<h3>Diagramme de classes partie hmi</h3>
 <img src="Conception/Media/hmi Class Diagram.jpg" alt="Diagramme de classe partie hmi">
-<h3>Diagramme de cas partie stockage</h3>
+<h3>Diagramme de classes partie stockage</h3>
 <img src="Conception/Media/storage Class Diagram.jpg" alt="Diagramme de classe partie stockage">
 
 ## Qu'est-ce que m'a apporté ce projet❓
